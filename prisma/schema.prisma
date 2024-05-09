@@ -14,11 +14,11 @@ datasource db {
 }
 
 model Product {
-  sku           String    @id @unique
-  title         String
-  quantity      Int       @default(0)
-  categories    Category[]
-  
+  sku        String     @id @unique
+  title      String
+  quantity   Int        @default(0)
+  categories Category[]
+
   warehouse     Warehouse @relation(fields: [warehouseUuid], references: [uuid])
   warehouseUuid String
 }
@@ -30,7 +30,7 @@ model Category {
 }
 
 model Warehouse {
-  uuid     String   @id @unique
+  uuid     String    @id @unique
   title    String
   products Product[]
 }
